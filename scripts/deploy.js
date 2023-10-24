@@ -11,9 +11,8 @@ async function main() {
 
   console.log("Deploying contracts with the account:", deployer.address);
 
-  const weiAmount = (await deployer.getBalance()).toString();
-
-  console.log("Account balance:", (await ethers.utils.formatEther(weiAmount)));
+  // const weiAmount = (await deployer.getBalance()).toString();
+  // console.log("Account balance:", (await ethers.utils.formatEther(weiAmount)));
 
   // make sure to replace the "GoofyGoober" reference with your own ERC-20 name!
   const Token = await ethers.getContractFactory("GoofyGoober");
@@ -28,3 +27,8 @@ main()
     console.error(error);
     process.exit(1);
   });
+
+// npx hardhat run scripts/deploy.js --network goerli
+
+// npx hardhat test
+
